@@ -6,24 +6,24 @@
 ## Project Description
 Our calendar will give you a daily rundown of what assignments are due, what classes you have, and any other events that you have at the beginning of each day. We will store information for each day using the singleton pattern to save configuration files. We will also handle recurring events with the visitor design pattern, which will visit each day and see if it is applicable for a given change and we will use this design pattern for modifying day objects. Lastly, we will use the abstract factory design pattern to handle types of events such as quizzes, homework due dates, class schedules, etc. We will incorporate it all into either a simple daily message delivered with http requests to a php backend system or if we have enough time an interactive web app with html and css. The back end of our program will be written in C++ and store yearly information in text files. 
 
-##Why it’s important
+### Why it’s important
  - It helps students manage their school schedule and quiz/exam times for students to be successful.
  - Provides a simple way for students to enter their schedule of classes for a quarter and reads it back
  - Provides better time management for students.
  - We are in need of a calendar program or app that is customized for school work.
 
-##Technologies used: 
+### Technologies used: 
  - C++
  - We will use PHP, HTML, and CSS to make a simple web calendar GUI if we have enough time and have already completed a planner which incorporates all 3 of our design patterns. 
 
 
-##Input / output of project:
+### Input / output of project:
 - Input: Students’ schedule, daily specific tasks.
 - Output: Text based configuration file.
 
 
 
-##Design Patterns:
+### Design Patterns:
 - Visitor:
 For starters, all the years, months, days are their own objects. By using the Visitor design pattern, we can do operations, such as adding quiz and exam days, with each individual day without modifying its attributes or class structures. For the most part, any kind of operations related to scheduling or items would be implemented with the Visitor design pattern.
 - Abstract Factory: 
