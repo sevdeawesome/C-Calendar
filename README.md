@@ -1,10 +1,7 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\<"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# \<Epic Calendar\>
  > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: \<[Carl Che](https://github.com/pureche)\>, \<[Severin Field](https://github.com/sevdeawesome)\>, \<[Alex Nguyen](https://github.com/Anguy600)\>
  
  > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
  
@@ -17,14 +14,36 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
- > * What will be the input/output of your project?
- > * What are the three design patterns you will be using. For each design pattern you must:
- >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+Our calendar will give you a daily rundown of what assignments are due, what classes you have, and any other events that you have at the beginning of each day. We will store information for each day using the singleton pattern to save configuration files. We will also handle recurring events with the visitor design pattern, which will visit each day and see if it is applicable for a given change and we will use this design pattern for modifying day objects. Lastly, we will use the abstract factory design pattern to handle types of events such as quizzes, homework due dates, class schedules, etc. We will incorporate it all into either a simple daily message delivered with http requests to a php backend system or if we have enough time an interactive web app with html and css. The back end of our program will be written in C++ and store yearly information in text files. 
+
+* Why it’s important
+ * It helps students manage their school schedule and quiz/exam times for students to be successful.
+ * Provides a simple way for students to enter their schedule of classes for a quarter and reads it back
+ * Provides better time management for students.
+ * We are in need of a calendar program or app that is customized for school work.
+
+* Technologies used: 
+- C++
+- We will use PHP, HTML, and CSS to make a simple web calendar GUI if we have enough time and have already completed a planner which incorporates all 3 of our design patterns. 
+
+
+* Input / output of project:
+- Input: Students’ schedule, daily specific tasks.
+- Output: Text based configuration file.
+
+
+
+* Design Patterns:
+- Visitor:
+For starters, all the years, months, days are their own objects. By using the Visitor design pattern, we can do operations, such as adding quiz and exam days, with each individual day without modifying its attributes or class structures. For the most part, any kind of operations related to scheduling or items would be implemented with the Visitor design pattern.
+- Abstract Factory: 
+The Abstract Factory design pattern can be used for a number of different features of our calendar. Firstly, different types of events, such as quizzes, homework due dates, and classes will all inherit from an event class that can be repeated day by day / week by week in the calendar. Because of this, we will use the Abstract Factory design pattern to handle all events. One of the benefits of this design pattern is that it makes exchanging product families easy since the class of a concrete factory is only defined once in an application - this will provide an easy way to edit all event subclasses, regardless of what they are. It will also promote consistency within these different event classes. One drawback is that it will be difficult to support and create new events/ event types.
+
+- Singleton: 
+Singleton is a design pattern that fits perfectly with our needs of reading and writing to a configuration file for the needs of saving calendar items. The singleton instance can also be used as a global object. All of the operations that relate to adding/removing/modifying calendar items can be operated on this single object, as well as being saved to storage/write to file when needed. 
+
+
+
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
