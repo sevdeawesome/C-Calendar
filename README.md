@@ -47,8 +47,9 @@ Singleton is a design pattern that fits perfectly with our needs of reading and 
  >   * Create smaller development tasks as issues and assign them to team members. Place these in the `Backlog` column.
  >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
- > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
+
  ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/project%20(1).png)
+ This is our current class diagram. We use the singleton pattern in writing to and from files. We will have a text file when necessary for events like quizzes or custom events that need long descriptions. Our plan class is a composition of events such as quizzes or class that someone has, and here we use the composite pattern where event is the composite. Lastly, we use the decorator pattern to decorate custom events and give them attributes like the color (they will show as a different color in a GUI) or priority (how important or urgent is this event). 
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
