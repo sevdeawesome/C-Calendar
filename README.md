@@ -6,6 +6,26 @@
 ## Project Description
 Our calendar will give you a daily rundown of what assignments are due, what classes you have, and any other events that you have at the beginning of each day. We will store information for each day using the singleton pattern to save configuration files. We will also handle recurring events with the visitor design pattern, which will visit each day and see if it is applicable for a given change and we will use this design pattern for modifying day objects. Lastly, we will use the abstract factory design pattern to handle types of events such as quizzes, homework due dates, class schedules, etc. We will incorporate it all into either a simple daily message delivered with http requests to a php backend system or if we have enough time an interactive web app with html and css. The back end of our program will be written in C++ and store yearly information in text files. 
 
+
+## Functionalities:
+Create a class schedule
+Create events
+View of upcoming events
+View of class schedule
+reminder(email)
+Visualization of the calendar (either in console or HTML web app if enough time)
+Knows when there's a federal holiday coming up
+
+
+## Epics:
+As a user, I should be able to create a class schedule for a quarter.
+As a user, I should be able to create events such as quizzes and exams.
+As a user, I should be able to see a calendar of upcoming events
+As a user, I should be able to see my full class schedule for the quarter.
+As a user, I should receive a reminder / email when an event is coming up.
+As a user, i should be able to visually see the calendar
+As a user, I should be informed when a holiday is coming up
+
 ### Why it’s important
  - It helps students manage their school schedule and quiz/exam times for students to be successful.
  - Provides a simple way for students to enter their schedule of classes for a quarter and reads it back
