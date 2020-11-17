@@ -25,10 +25,9 @@ Our calendar will give you a daily rundown of what assignments are due, what cla
 
 
 ### Design Patterns:
-- Visitor:
-For starters, all the years, months, days are their own objects. By using the Visitor design pattern, we can do operations, such as adding quiz and exam days, with each individual day without modifying its attributes or class structures. For the most part, any kind of operations related to scheduling or items would be implemented with the Visitor design pattern.
-- Abstract Factory: 
-The Abstract Factory design pattern can be used for a number of different features of our calendar. Firstly, different types of events, such as quizzes, homework due dates, and classes will all inherit from an event class that can be repeated day by day / week by week in the calendar. Because of this, we will use the Abstract Factory design pattern to handle all events. One of the benefits of this design pattern is that it makes exchanging product families easy since the class of a concrete factory is only defined once in an application - this will provide an easy way to edit all event subclasses, regardless of what they are. It will also promote consistency within these different event classes. One drawback is that it will be difficult to support and create new events/ event types.
+- Composite: 
+We chose the composite pattern because it allows us to have a composition of similar objects inside of one object. These are going to be events inside of a day (inside of a the planner / plan class). The leafs are going to be quizzes, tests and custom events and the composite is going to be the plan. Lastly, the event class is going to be the component of the composite. This will make handling of various type of events easier and we don’t see any major drawbacks with this pattern.  
+
 
 - Singleton: 
 Singleton is a design pattern that fits perfectly with our needs of reading and writing to a configuration file for the needs of saving calendar items. The singleton instance can also be used as a global object. All of the operations that relate to adding/removing/modifying calendar items can be operated on this single object, as well as being saved to storage/write to file when needed. 
