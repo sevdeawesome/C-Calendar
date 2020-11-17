@@ -33,6 +33,7 @@ We chose the composite pattern because it allows us to have a composition of sim
 Singleton is a design pattern that fits perfectly with our needs of reading and writing to a configuration file for the needs of saving calendar items. The singleton instance can also be used as a global object. All of the operations that relate to adding/removing/modifying calendar items can be operated on this single object, as well as being saved to storage/write to file when needed. 
 
 
+- Decorator: We chose this design pattern to allow the users to create custom events that can be differentiated by color to allow the user to see the importance of one event to another. It is  giving the user the freedom to add  events that are not specific to school work. One drawback is having too many events would clutter the calendar with bright visuals making it difficult to know what is prioritized.
 
 
 
