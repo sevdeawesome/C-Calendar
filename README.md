@@ -59,7 +59,7 @@ Singleton is a design pattern that fits perfectly with our needs of reading and 
 
 ## Class Diagram
 
- ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/project%20(1).png)
+ ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/project%20(2).png)
  This is our current class diagram. We use the singleton pattern in writing to and from files. We will have a text file when necessary for events like quizzes or custom events that need long descriptions. Our plan class is a composition of events such as quizzes or class that someone has, and here we use the composite pattern where event is the composite. Lastly, we use the decorator pattern to decorate custom events and give them attributes like the color (they will show as a different color in a GUI) or priority (how important or urgent is this event). 
  
  > ## Phase III
