@@ -1,5 +1,8 @@
 using namespace std;
 class colorDecorator : public customEvent
 {
-  string color;   
+ public:
+  string color;
+  void setColorFunc(string color);
+    
 }
