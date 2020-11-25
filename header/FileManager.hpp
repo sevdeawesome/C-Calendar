@@ -12,7 +12,7 @@ struct WriteInterface {
 struct ReadInterface {
     virtual void readToFile(ifstream& input) = 0;
 };
-
+ 
 class FileManager
 {
 public:
