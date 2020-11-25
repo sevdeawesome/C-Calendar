@@ -8,7 +8,7 @@ struct WriteInterface {
     virtual void writeToFile(ofstream& output) const = 0;
 };
 
-//读数据接口
+
 struct ReadInterface {
     virtual void readToFile(ifstream& input) = 0;
 };
