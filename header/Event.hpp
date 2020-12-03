@@ -36,10 +36,12 @@ class Event {
         virtual void printUpcomingEvents() = 0;
         virtual void printCalendar() = 0; 
         virtual void printDate () =0 ;
-        virtual void printTime() = 0;
+        
+
+	virtual void printTime() = 0;
 
 	//members defined here
-        bool checkifToday(int time);
+        bool checkifToday(int timeInput);
         
 };
 
