@@ -5,7 +5,7 @@ class Class : public Event
         string name;
         string info;
         int time;
-        array event* events;
+     //   array event* events;
     
         void printSchedule(); //print class schedule
         void printUpcomingEvents();

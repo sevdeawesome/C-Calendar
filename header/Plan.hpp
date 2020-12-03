@@ -2,16 +2,42 @@ using namespace std;
 class Plan: public Event  {
     
  public:
-        string name;
-        string info;
-        int time;
-        array event* events;
+        
+       	vector<event*> events;
     
-        void printSchedule(); //print class schedule
-        void printUpcomingEvents();
-        void printCalendar();
-        void printDate();
-        void printTime();
+        void printSchedule(){
+		for(int i = 0; i < events.length(); i++)
+		{
+			events[i]->printSchedule();
+		}	
+
+	}
+        void printUpcomingEvents()
+	{
+		for(int i = 0; i < events.length(); i++)
+                {
+                        events[i]->printUpcomingEvents();
+                }
+
+	
+	}
+        void printCalendar()
+	{	
+		for(int i = 0; i < events.length(); i++)
+                {
+                        events[i]->printCalendar();
+                }
+
+
+	}
+        void printDate()
+	{
+		//no necessary implementation
+	}
+        void printTime()
+	{
+		//no necessarry implementation
+	}
 }
 
 
