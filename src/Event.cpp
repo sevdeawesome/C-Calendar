@@ -1,6 +1,11 @@
 #include "../header/Event.hpp"
-
+#include <ctime>
+#include <iostream>
 using namespace std;
+
+
+
+
 int Event::getTime()
 {
 	return time;
@@ -36,11 +41,27 @@ void Event::setName(string n)
 
 
 
-bool checkifToday()
+bool Event::checkifToday(int timeInput)
 {
-return true;
-cout << "NEEDS IMPLEMENTATION ON CHECKIFTODAY IN EVENT";
+//	using namespace std::chrono;
 
+ // 	system_clock::time_point tp = system_clock::now();
+ //	 system_clock::duration dtn = tp.time_since_epoch();
+
+//	int currTime = dtn.count() * system_clock::period::num / system_clock::period::den;
+	time_t t = std::time(0);
+	long int currTime = static_cast<long int>(t);
+
+
+	if((timeInput-currTime) < 86400 || (currTime - timeInput) < 86400)
+	{
+		return true; 
+
+		//returns true if within 24 hours
+		//
+		//else returns false
+	}
+	return false;
 
 }
 
