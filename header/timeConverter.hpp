@@ -1,3 +1,7 @@
+#ifndef __timeConverter_H__
+#define __timeConverter_H__
+
+
 #include <string>
 #include <iostream>
 #include <ctime>
@@ -34,6 +38,15 @@ class timeConverter
 			recurrence = rec;
 		};
 			
+		long int getT()
+		{
+			return unixt;
+		};
+		string getRec()
+		{
+			return recurrence;
+		}
+		
 		void getFullTime()
 		{
 			struct tm ts;
@@ -44,5 +57,57 @@ class timeConverter
 			strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M:%S %Z", &ts);
 			printf("%s\n", buf);
 		};
+		void getSchedule()
+		{
+
+			
+			struct tm ts;
+                        char buf[80];
+
+
+                        ts = *localtime(&unixt);
+                       
+	
+			if(isRecurring)
+			{
+				strftime(buf, sizeof(buf), "%H:%M:%S %Z", &ts);
+        	                printf("%s\n", buf);
+				cout << "every " << recurrence << endl;			
+
+			}
+			else
+			{
+				strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M", &ts);
+                        	printf("%s\n", buf);		
+			}
+
+		};
 		
+		void getTime()
+		{
+			struct tm ts;
+                       	char buf[80];
+
+
+                        ts = *localtime(&unixt);
+
+
+                      	strftime(buf, sizeof(buf), "%H:%M:%S %Z", &ts);
+                        printf("%s\n", buf);
+
+		};
+
+		void getDate()
+		{	
+			struct tm ts;
+                        char buf[80];
+
+
+                        ts = *localtime(&unixt);
+                        strftime(buf, sizeof(buf), "%a %Y-%m-%d", &ts);
+                        printf("%s\n", buf);
+                       			
+		};
 };
+
+#endif
