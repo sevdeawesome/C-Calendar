@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	FileIO::GetInstance()->readFromFile("readFile.txt");
-	FileIO::GetInstance()->showAllDatas();
+	FileIO::GetInstance()->showAllData();
 	FileIO::GetInstance()->addData(6);
 	FileIO::GetInstance()->addData(7);
 	cout<<FileIO::GetInstance()->getData(2)<<endl;
