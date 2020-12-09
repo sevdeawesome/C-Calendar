@@ -24,5 +24,3 @@ public:
 	DATATYPE getData(int size);  //get specific data from arr
 	void readFromFile(std::string readFileName);  //read data from file
 };
-
-
