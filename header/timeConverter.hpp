@@ -47,7 +47,7 @@ class timeConverter
 			return recurrence;
 		}
 		
-		void getFullTime()
+		string getFullTime()
 		{
 			struct tm ts;
 			char buf[80];
@@ -55,35 +55,55 @@ class timeConverter
  
 			ts = *localtime(&unixt);
 			strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M:%S %Z", &ts);
-			printf("%s\n", buf);
+			//	printf("%s\n", buf);
+			//
+			//
+			string output;
+
+			for(int i = 0; i < 40; i++)
+			{
+       				 output += buf[i];
+
+			}	
+
+			return output;
 		};
-		void getSchedule()
+		string getSchedule()
 		{
 
 			
 			struct tm ts;
                         char buf[80];
 
-
+			
                         ts = *localtime(&unixt);
-                       
+                       	string output;
 	
 			if(isRecurring)
 			{
 				strftime(buf, sizeof(buf), "%H:%M:%S %Z", &ts);
-        	                printf("%s\n", buf);
-				cout << "every " << recurrence << endl;			
+        	                for(int i = 0; i < 40; i++)
+				{
+					output += buf[i];
+				}
+				output = output +  " every " +	recurrence;		
 
 			}
 			else
 			{
 				strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M", &ts);
-                        	printf("%s\n", buf);		
+                        	//	printf("%s\n", buf);		
+				for(int i = 0; i < 40; i++)
+				{
+					output += buf[i];
+
+				}
 			}
 
+			return output;
 		};
 		
-		void getTime()
+		string getTime()
 		{
 			struct tm ts;
                        	char buf[80];
@@ -93,11 +113,20 @@ class timeConverter
 
 
                       	strftime(buf, sizeof(buf), "%H:%M:%S %Z", &ts);
-                        printf("%s\n", buf);
+                 	//       printf("%s\n", buf);
+                 	string output;
+
+			for(int i = 0; i < 40; i++)
+			{
+      				 output += buf[i];
+
+			}
+
+			return output;
 
 		};
 
-		void getDate()
+		string getDate()
 		{	
 			struct tm ts;
                         char buf[80];
@@ -105,8 +134,16 @@ class timeConverter
 
                         ts = *localtime(&unixt);
                         strftime(buf, sizeof(buf), "%a %Y-%m-%d", &ts);
-                        printf("%s\n", buf);
-                       			
+                       // printf("%s\n", buf);
+                        string output;
+
+			for(int i = 0; i < 40; i++)
+			{
+        			output += buf[i];
+
+			}	
+
+			return output;      			
 		};
 };
 
