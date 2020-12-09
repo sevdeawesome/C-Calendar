@@ -22,9 +22,9 @@ class timeConverter
 
 		timeConverter(int t, bool r)
 		{
-
+			isRecurring = r;
 			unixt = t;
-			if(r = true)
+			if(r == true)
 			{
 					cout << "Enter recurrence pattern (ex: MWF)" << endl;
 					cin >> recurrence;
@@ -59,14 +59,33 @@ class timeConverter
 			//
 			//
 			string output;
+			
 
 			for(int i = 0; i < 40; i++)
 			{
-       				 output += buf[i];
+				if(buf[i] == 92)
+				{
+					break;
+				}
+       				else{
+			 	output += buf[i];
+				}
 
-			}	
+			}
+			
 
-			return output;
+			//filter out the extra stuff in the string
+			string finaloutput;
+			int i = 0;
+			char check = output.at(i);	
+			while(check != '\0' && i < 30)
+			{
+				finaloutput += check;
+				i++;
+				check = output.at(i);
+				
+			}
+			return finaloutput;
 		};
 		string getSchedule()
 		{
@@ -84,23 +103,45 @@ class timeConverter
 				strftime(buf, sizeof(buf), "%H:%M:%S %Z", &ts);
         	                for(int i = 0; i < 40; i++)
 				{
-					output += buf[i];
+				if(buf[i] == '\0')
+                                {
+                                        break;
+                                }
+					else{output += buf[i];}
 				}
 				output = output +  " every " +	recurrence;		
 
 			}
 			else
 			{
+				
+					/*
 				strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M", &ts);
-                        	//	printf("%s\n", buf);		
+        			                	//	printf("%s\n", buf);		
 				for(int i = 0; i < 40; i++)
 				{
 					output += buf[i];
 
 				}
+				*/
+				return "";
 			}
 
-			return output;
+		        return output;
+			/*
+
+			string finaloutput;
+                        int i = 0;
+                        char check = output.at(i);
+                        while(check != '\0' && i < 30)
+                        {
+                                finaloutput += check;
+                                i++;
+                                check = output.at(i);
+
+                        }
+                        return finaloutput;
+		*/
 		};
 		
 		string getTime()
@@ -122,7 +163,18 @@ class timeConverter
 
 			}
 
-			return output;
+			string finaloutput;
+                        int i = 0;
+                        char check = output.at(i);
+                        while(check != '\0' && i < 30)
+                        {
+                                finaloutput += check;
+                                i++;
+                                check = output.at(i);
+
+                        }
+                        return finaloutput;
+
 
 		};
 
@@ -143,7 +195,18 @@ class timeConverter
 
 			}	
 
-			return output;      			
+			string finaloutput;
+                        int i = 0;
+                        char check = output.at(i);
+                        while(check != '\0' && i < 30)
+                        {
+                                finaloutput += check;
+                                i++;
+                                check = output.at(i);
+
+                        }
+                        return finaloutput;
+		
 		};
 };
 

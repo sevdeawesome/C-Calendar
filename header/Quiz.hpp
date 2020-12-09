@@ -25,7 +25,13 @@ class Quiz : public Event
 	};
         string printCalendar()
 	{
-		//no implementation here
+		string calendar;
+		calendar += name;
+		calendar += "Quiz";
+                calendar += "null";
+                calendar += "|";
+                calendar += time;
+		return calendar;
 	};
         string printDate()
 	{
