@@ -19,7 +19,7 @@ private:
 public:
 	static FileIO* GetInstance();  //gets instance
 	void writeToFile(std::string writeFileName);  //save data to file
-	void showAllData(); //show
+	string showAllData(); //show
 	void addData(DATATYPE data); //adding entry
 	DATATYPE getData(int size);  //get specific data from arr
 	void readFromFile(std::string readFileName);  //read data from file

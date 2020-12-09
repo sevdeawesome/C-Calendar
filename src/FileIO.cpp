@@ -31,12 +31,15 @@ void FileIO::writeToFile(std::string writeFileName)
     out.close();
 }
 
-void FileIO::showAllData()
+string FileIO::showAllData()
 {
+    string output;
+
     for (int i = 0; i < allData.size(); i++)
     {
-        cout << allData[i] << endl;   
+        output+= allData[i] << "\n";   
     }
+    return output;
 }
 
 void FileIO::addData(DATATYPE data)
