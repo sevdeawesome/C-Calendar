@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "FileIO.h"
 
 using namespace std;
