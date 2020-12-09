@@ -32,7 +32,7 @@ void FileIO::writeToFile(std::string writeFileName)
     out.close();
 }
 
-string FileIO::showAllData()
+DATATYPE FileIO::showAllData()
 {
     string output;
 

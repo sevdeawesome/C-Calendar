@@ -8,6 +8,13 @@
 #include "header/FileIO.hpp"
 #include <fstream>
 
+//NEW INCLUDES
+#include "header/Event.hpp"
+#include "header/Plan.hpp"
+#include "header/Class.hpp"
+#include "header/Quiz.hpp"
+
+
 using namespace std;
 
 /*
@@ -103,7 +110,9 @@ int main(){
      
      
 
-    
+    string type;
+    string name;
+    int time;
 
     int userIn = 0;
     do
@@ -115,9 +124,9 @@ int main(){
         {
         case 1:
             //Create Class Schedule
-            string type = "Class";
-            string name;
-            int time;
+            type = "Class";
+            name = "";
+            
             
             cout << "Enter the name of the class: " << endl;
             cin >> name;
@@ -145,9 +154,9 @@ int main(){
             //Create Quiz Schedule
             
             
-            string type = "Quiz";
-            string name;
-            int time;
+            type = "Quiz";
+            name = "";
+            
             
             cout << "Enter the name of the class the quiz is in: " << endl;
             cin >> name;
@@ -164,6 +173,9 @@ int main(){
             //Create Custom Events
             //REQUIRES IMPLEMENTATION
             //allows for creating custom events then customizing with decorators
+            
+            /* 
+            //POSSIBLE OPTION:
             string type = "customEvent";
             string color = " ";
 	        string name = " ";
@@ -183,6 +195,10 @@ int main(){
 			cin >> priority;
 			Event *custom = new customEvent(color,name,info,time,priority);
 			thePlan->addEvent(custom);
+            
+            */
+            
+            
 			cout << "The custom event has been added." << endl;
             cout << "implementation here -- Alex";
             break;
