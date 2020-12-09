@@ -42,7 +42,7 @@ class Class : public Event
 	
 		string calendar;
 		calendar += name;
-		calendar += "|Class|";
+		calendar += "|c|";
 		calendar += t.getRec();
 		calendar += "|";
 		calendar += time;
