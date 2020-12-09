@@ -14,8 +14,12 @@ class Plan {
         Plan(string n){
 		name = n;
 	};
+
+	//composition of events are stored in Plan
        	vector<Event*> events;
     
+
+	//prints all info about all events
         string printSchedule(){
 		string output;
 		for(int i = 0; i < events.size(); i++)
@@ -25,6 +29,9 @@ class Plan {
 		return output;
 
 	}
+
+
+	//only prints events that are today
         string printUpcomingEvents()
 	{
 		string output;
@@ -35,12 +42,16 @@ class Plan {
 		
 		return output;
 	}
+
+
+	//prints all events in calendar format
+	//**FOR FILEIO**
         string printCalendar()
 	{
 		string output;	
 		for(int i = 0; i < events.size(); i++)
                 {
-                 	output+=       events[i]->printCalendar();
+                 	output = output +      events[i]->printCalendar() + "\n";
                 }
 
 		return output;

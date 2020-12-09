@@ -50,13 +50,17 @@ bool Event::checkifToday(int timeInput)
 
 //	int currTime = dtn.count() * system_clock::period::num / system_clock::period::den;
 	time_t t = std::time(0);
+
+	
 	long int currTime = static_cast<long int>(t);
-
-
-	if((timeInput-currTime) < 86400 || (currTime - timeInput) < 86400)
+	
+	//cout << "currTime var: " << currTime << endl;
+	//cout << "timeInput var: " << timeInput << endl;
+	//cout << to_string(abs(timeInput-currTime));
+	if(abs(currTime - timeInput) <= 86400)
 	{
 		return true; 
-
+	//	cout << "small diff";
 		//returns true if within 24 hours
 		//
 		//else returns false

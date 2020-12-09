@@ -14,25 +14,29 @@ class Quiz : public Event
 		return	t.getSchedule();		
 	};
 
-//print class schedule
         string printUpcomingEvents()
 	{	
-		if(checkifToday(time))
-		{
-			timeConverter t = timeConverter(time, false);
-        	        t.getSchedule();
-		}
+		return "";
+		//printUpcomingEvents ONLY prints recurring events, quizzes are not recurring so they do not print..
 	};
+
+	//printcalendar for implementation in fileIO to easily write to files
         string printCalendar()
 	{
 		string calendar;
 		calendar += name;
-		calendar += "|q|";
-                calendar += "null";
+		calendar += "|q|"; // q for quiz
+                calendar += "0"; //no recurrence - recurrence term
                 calendar += "|";
-                calendar += time;
+                calendar += to_string(time); //saves as string
 		return calendar;
-	};
+		
+
+	//	string calendar = "";
+	//	calendar = name + "|" + "q" + "|" + "0" + "|" + time;
+
+
+		};
         string printDate()
 	{
 		timeConverter t = timeConverter(time, false);
