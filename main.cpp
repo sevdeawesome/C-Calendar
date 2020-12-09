@@ -38,7 +38,7 @@ vector<string> explode(string const & s, char delim)
 
 int main(){
     
-    Plan * thePlan = new Event("the plan", "plan", 0);
+    Plan * thePlan = new Plan("PlannerA");
     // Event * exampleClass = new Class("CS100", "Class", 861203123);
     // Event * exampleCustom = new customEvent("CS100", "customEvent", 861203123 , "red");
     // Event * colorDecorator = customEvent();
