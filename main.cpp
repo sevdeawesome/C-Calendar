@@ -5,7 +5,7 @@
 #include <sstream>
 #include <utility>
 
-#include "../header/FileIO.hpp"
+#include "header/FileIO.hpp"
 #include <fstream>
 
 using namespace std;
