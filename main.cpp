@@ -76,29 +76,42 @@ int main(){
             istringstream f(inText);
             string line; 
             while (std::getline(f, line)) {
-                auto linePlode = explode(line, "|");
+                auto linePlode = explode(line, '|');
                 for (string item : linePlode){
                     //item[0] = event name
                     //item[1] = event type
                     //item[2] = event time
+                    
+                    //event type c = "Class"
+                    //event type q = "Quiz"
+                    //event type e = "customEvent"
+                    
                     switch(item[1]){
-                        case "Class" :
+                        case 'c':
+                        {
                             Event * theClass = new Class(item[0], item[1], item[2]);
                             thePlan->addEvent(theClass);
                             delete theClass;
+                        }
                             break;
-
-                        case "Quiz" :
+                        
+                        case 'q':
+                        {
                             Event * theQuiz = new Quiz(item[0], item[1], item[2]);
                             thePlan->addEvent(theQuiz);
                             delete theQuiz;
+                        }
                             break;
 
-                        case "customEvent":
+                        case 'u':
+                        {
                             Event * aCustomEvent = new customEvent(item[0], item[1], item[2],item[3],item[4]);
                             thePlan->addEvent(aCustomEvent);
                             delete aCustomEvent;
+                        }
                             break;
+                        default :
+                            cout << "Event Type Error" << endl;
                     }//end of switch
 
                 }//end of for item
