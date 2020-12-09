@@ -52,6 +52,11 @@ class Plan: public Event  {
 		return "";
 		//no necessarry implementation
 	}
+
+	void addEvent(Event* addThis)
+	{
+		events.push_back(addThis);
+	}
 };
 
 #endif

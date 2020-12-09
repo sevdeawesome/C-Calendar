@@ -41,7 +41,15 @@ class Class : public Event
         string printCalendar()
 	{
 	
-		return "";
+		string calendar;
+		calendar += name;
+		calendar += "|Class|";
+		calendar += t.getRec();
+		calendar += "|";
+		calendar += time;
+
+
+		return calendar;
 	//needs implementation - what do you want me to do for this?
 	};
         string printDate()
