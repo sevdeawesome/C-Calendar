@@ -31,7 +31,7 @@ void FileIO::writeToFile(std::string writeFileName)
     out.close();
 }
 
-void FileIO::showallData()
+void FileIO::showAllData()
 {
     for (int i = 0; i < allData.size(); i++)
     {
