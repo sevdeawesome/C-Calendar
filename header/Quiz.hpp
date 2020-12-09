@@ -1,5 +1,6 @@
 #ifndef __QUIZ_H__
 #define __QUIZ_H__
+
 #include "timeConverter.hpp"
 
 using namespace std;
@@ -7,14 +8,14 @@ class Quiz : public Event
 {
      public:
     	
-	void printSchedule()
+	string printSchedule()
 	{
 		timeConverter t = timeConverter(time, false);
-		t.getSchedule();		
+		return	t.getSchedule();		
 	};
 
 //print class schedule
-        void printUpcomingEvents()
+        string printUpcomingEvents()
 	{	
 		if(checkifToday(time))
 		{
@@ -22,20 +23,20 @@ class Quiz : public Event
         	        t.getSchedule();
 		}
 	};
-        void printCalendar()
+        string printCalendar()
 	{
 		//no implementation here
 	};
-        void printDate()
+        string printDate()
 	{
 		timeConverter t = timeConverter(time, false);
-	         t.getDate();
+	        return t.getDate();
 
 	};
-        void printTime()
+        string printTime()
 	{
 		timeConverter t = timeConverter(time, false);
-                t.getTime();
+         	return  t.getTime();
 
 	};
     
