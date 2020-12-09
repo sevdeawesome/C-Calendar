@@ -34,11 +34,11 @@ void FileIO::writeToFile(std::string writeFileName)
 
 DATATYPE FileIO::showAllData()
 {
-    string output;
+    string output = "";
 
     for (int i = 0; i < allData.size(); i++)
     {
-        output+= allData[i] << "\n";   
+        output+= allData[i] + "\n";   
     }
     return output;
 }

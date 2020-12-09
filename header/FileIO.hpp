@@ -2,7 +2,9 @@
 #include <string>
 #include <vector>
 
-#define DATATYPE int   //any datatype
+using namespace std;
+
+#define DATATYPE string   //any datatype
 
 class FileIO {
 private:
