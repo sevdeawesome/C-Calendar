@@ -22,6 +22,11 @@ class Class : public Event
 		t = timeConverter(time, true);	
 	
 	};
+	Class(string a, string b, int c, string rec) : Event(a, b, c)
+	{
+		t = timeConverter(time, rec);
+
+	};
         string  printSchedule()
 	{
 	//	timeConverter t = timeConverter(time, true);
@@ -45,7 +50,7 @@ class Class : public Event
 		calendar += "|c|";
 		calendar += t.getRec();
 		calendar += "|";
-		calendar += time;
+		calendar += to_string(time);
 
 
 		return calendar;
