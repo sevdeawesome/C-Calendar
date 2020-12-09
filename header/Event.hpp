@@ -32,13 +32,13 @@ class Event {
 
 
 	//members (virtual)
-        virtual void printSchedule() = 0; //print class schedule
-        virtual void printUpcomingEvents() = 0;
-        virtual void printCalendar() = 0; 
-        virtual void printDate () =0 ;
+        virtual string printSchedule() = 0; //print class schedule
+        virtual string printUpcomingEvents() = 0;
+        virtual string printCalendar() = 0; 
+        virtual string printDate () =0 ;
         
 
-	virtual void printTime() = 0;
+	virtual string printTime() = 0;
 
 	//members defined here
         bool checkifToday(int timeInput);

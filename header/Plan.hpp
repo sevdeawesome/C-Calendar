@@ -1,43 +1,57 @@
+#ifndef __PLAN_H__
+#define __PLAN_H__
+
+
+#include "Event.hpp"
+#include <vector>
+
+
 using namespace std;
 class Plan: public Event  {
     
  public:
         
-       	vector<event*> events;
+       	vector<Event*> events;
     
-        void printSchedule(){
-		for(int i = 0; i < events.length(); i++)
+        string printSchedule(){
+		string output;
+		for(int i = 0; i < events.size(); i++)
 		{
-			events[i]->printSchedule();
+			output = output + events[i]->printSchedule()+ "\n";
 		}	
+		return output;
 
 	}
-        void printUpcomingEvents()
+        string printUpcomingEvents()
 	{
-		for(int i = 0; i < events.length(); i++)
+		string output;
+		for(int i = 0; i < events.size(); i++)
                 {
-                        events[i]->printUpcomingEvents();
+                	output+=      events[i]->printUpcomingEvents();
+                }
+		
+		return output;
+	}
+        string printCalendar()
+	{
+		string output;	
+		for(int i = 0; i < events.size(); i++)
+                {
+                 	output+=       events[i]->printCalendar();
                 }
 
-	
+		return output;
 	}
-        void printCalendar()
-	{	
-		for(int i = 0; i < events.length(); i++)
-                {
-                        events[i]->printCalendar();
-                }
-
-
-	}
-        void printDate()
+        string printDate()
 	{
-		//no necessary implementation
+		return "";	
+	//no necessary implementation
 	}
-        void printTime()
+        string printTime()
 	{
+		return "";
 		//no necessarry implementation
 	}
-}
+};
 
-
+#endif

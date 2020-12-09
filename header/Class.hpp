@@ -2,6 +2,9 @@
 #define CLASS_H
 
 
+#include <iostream>
+#include <string>
+
 using namespace std;
 class Class : public Event
 {
@@ -20,31 +23,34 @@ class Class : public Event
 		t = timeConverter(time, true);	
 	
 	};
-        void printSchedule()
+        string  printSchedule()
 	{
 	//	timeConverter t = timeConverter(time, true);
-                t.getSchedule();
+               return  t.getSchedule();
 
 	}; //print class schedule
-        void printUpcomingEvents()
+        string printUpcomingEvents()
 	{
 		if(checkifToday(time))
 		{
-			t.getSchedule();
+			return t.getSchedule();
 		}	
+		return "";
 	};
 
-        void printCalendar()
+        string printCalendar()
 	{
-		//needs implementation - what do you want me to do for this?
+	
+		return "";
+	//needs implementation - what do you want me to do for this?
 	};
-        void printDate()
-	{
-		t.getDate();
+        string printDate()
+	{	
+		return	t.getDate();
 	};
-        void printTime()
+        string printTime()
 	{
-		t.getTime();
+		return t.getTime();
 	};
 };
 
