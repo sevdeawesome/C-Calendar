@@ -7,7 +7,7 @@ using namespace std;
 class Quiz : public Event
 {
      public:
-    	
+    	Quiz(string n, string i, int t) : Event(n, i, t){};
 	string printSchedule()
 	{
 		timeConverter t = timeConverter(time, false);

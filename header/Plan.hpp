@@ -7,10 +7,13 @@
 
 
 using namespace std;
-class Plan: public Event  {
+class Plan {
     
  public:
-        
+	string name;
+        Plan(string n){
+		name = n;
+	};
        	vector<Event*> events;
     
         string printSchedule(){
