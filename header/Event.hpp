@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include <ctime>
 using namespace std;
 
 class Event {
@@ -60,7 +61,23 @@ class Event {
 	//members defined here
         bool checkifToday(int timeInput);
 	//checks if an event is within 24hrs of the current epoch time
-        
+ 	
+	bool checkifToday()
+	{
+		  time_t t = std::time(0);
+
+
+        	long int currTime = static_cast<long int>(t);
+
+
+   	     if(abs(currTime - time) <= 86400)
+   	     {
+        	        return true;
+	
+  	      }
+	        return false;
+
+	};       
 };
 
 

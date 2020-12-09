@@ -1,6 +1,20 @@
 #include "../header/timeConverter.hpp"
 using namespace std;
 
+
+/*
+
+These are the tests for the timeConverter class
+
+Plan, event, etc. are not used here
+
+Tests reccurrence within the timeConverter class
+Tests the getters
+Tests all getTime variants
+
+*/
+
+
 TEST(time_tests, testGetters)
 {
 

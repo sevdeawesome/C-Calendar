@@ -51,7 +51,7 @@ class Plan {
 		string output;	
 		for(int i = 0; i < events.size(); i++)
                 {
-                 	output+=       events[i]->printCalendar();
+                 	output = output +      events[i]->printCalendar() + "\n";
                 }
 
 		return output;
