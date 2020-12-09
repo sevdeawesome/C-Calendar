@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-#define DATATYPE int   //any datatype
+#define DATATYPE string   //any datatype
 
 class FileIO {
 private:
