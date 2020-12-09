@@ -17,7 +17,6 @@ class Class : public Event
      //   int time;
      //   array event* events;
     	//timeConverter t;
-	
 	Class(string a, string b, int c) : Event(a, b, c) 
 	{
 		t = timeConverter(time, true);	

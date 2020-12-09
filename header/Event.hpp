@@ -16,7 +16,13 @@ class Event {
 
 	public:
 	//constructor
-	Event(string n, string i, int t);
+	Event(string n, string i, int t)
+	{
+		name = n;
+		info = i;
+		time = t;	
+
+	}
        
 
 	//getters
