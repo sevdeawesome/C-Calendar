@@ -18,11 +18,11 @@
 using namespace std;
 
 /*
-explode functionality copied from 
+explode function copied from 
 https://stackoverflow.com/questions/12966957/is-there-an-equivalent-in-c-of-phps-explode-function
 by Kerrek SB
 */
-vector<string> explode(string const & s, string delim)
+vector<string> explode(string const & s, char delim)
 {
     vector<string> result;
     istringstream iss(s);
@@ -38,7 +38,7 @@ vector<string> explode(string const & s, string delim)
 
 int main(){
     
-    Plan * thePlan = new Plan();
+    Plan * thePlan = new Event("the plan", "plan", 0);
     // Event * exampleClass = new Class("CS100", "Class", 861203123);
     // Event * exampleCustom = new customEvent("CS100", "customEvent", 861203123 , "red");
     // Event * colorDecorator = customEvent();
@@ -65,11 +65,19 @@ int main(){
             //file is empty
         }else{
             
-            auto plode = explode(inText, "\n");
+            //auto plode = explode(inText, "\n");
 
-            for (string chunk : plode){
-                auto chunkPlode = explode(chunk, "|");
-                for (string item : chunkPlode){
+            //for (string chunk : plode){
+            
+            //split text line by line function/idea copied from 
+            //https://stackoverflow.com/questions/5059049/read-a-string-line-by-line-using-c
+            //by Martin Stone
+            //reason: the previous explode function only accepts char, we need to split text string by the newline character \n.
+            istringstream f(inText);
+            string line; 
+            while (std::getline(f, line)) {
+                auto linePlode = explode(line, "|");
+                for (string item : linePlode){
                     //item[0] = event name
                     //item[1] = event type
                     //item[2] = event time
@@ -94,8 +102,8 @@ int main(){
                     }//end of switch
 
                 }//end of for item
-
-            }//end of for chunk
+              }//end of while
+            //}//end of for chunk
             
         }//end of if inTest length check.
         
