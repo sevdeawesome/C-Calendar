@@ -7,7 +7,7 @@
 class FileIO {
 private:
 	static FileIO* FileIOInstance;   //instance pointer
-	static std::vector<DATATYPE> allDatas;   //var for saving data
+	static std::vector<DATATYPE> allData;   //var for saving data
 	FileIO(); //cons
 	
 private:
