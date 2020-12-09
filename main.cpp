@@ -22,7 +22,7 @@ explode functionality copied from
 https://stackoverflow.com/questions/12966957/is-there-an-equivalent-in-c-of-phps-explode-function
 by Kerrek SB
 */
-vector<string> explode(string const & s, char delim)
+vector<string> explode(string const & s, string delim)
 {
     vector<string> result;
     istringstream iss(s);
@@ -113,6 +113,8 @@ int main(){
     string type;
     string name;
     int time;
+    Event * newClass; 
+    Event * newQuiz;
 
     int userIn = 0;
     do
@@ -135,9 +137,9 @@ int main(){
             cin >> time;
             cout << endl;
             
-            Event * newClass = new Class(name, type, time);
+             newClass = new Class(name, type, time);
             thePlan->addEvent(newClass);
-      
+              delete newClass;
 
             //class schedule: CS100 | class | MWF | 16002101010 
             //quiz: CS100 Test | quiz | null | 156001010
@@ -165,9 +167,9 @@ int main(){
             cin >> time;
             cout << endl;
             
-            Event * newQuiz = new Quiz(name, type, time);
+            newQuiz = new Quiz(name, type, time);
             thePlan->addEvent(newQuiz);
-            
+            delete newQuiz;
             break;
         case 3:
             //Create Custom Events
