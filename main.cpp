@@ -50,7 +50,7 @@ int main()
     cin >> quarterYear;
 
     fstream fs;
-    fs.open(quarterYear);
+    fs.open(quarterYear + ".txt");
     if (fs.fail())
     {
         //file doesn't exist, move on and save it as a new file when we're done.
@@ -58,7 +58,8 @@ int main()
     else
     {
         //file does exist, read data from file
-        FileIO::GetInstance()->readFromFile(quarterYear+".txt");
+
+        FileIO::GetInstance()->readFromFile(quarterYear + ".txt");
 
         string inText = FileIO::GetInstance()->showAllData();
         //inText has a chunk of text to be processed into the event object.
@@ -66,6 +67,7 @@ int main()
         if (inText.length() == 0)
         {
             //file is empty
+            cout << "\n***Schedule file exists but empty, moving on.***\n";
         }
         else
         {
@@ -82,46 +84,67 @@ int main()
             string line = "";
             while (getline(f, line))
             {
-                auto linePlode = explode(line, '|');
-
-                for (string item : linePlode)
+                if (line.length() == 0)
                 {
-                    //item[0] = event name
-                    //item[1] = event type
-                    //item[2] = event time
+                    //skipping empty line.
+                    break;
+                }
+                auto item = explode(line, '|');
 
-                    //event type c = "Class"
-                    //event type q = "Quiz"
-                    //event type e = "customEvent"
+                //item[0] = event name
+                //item[1] = event type
+                //item[2] = event time
+
+                //event type c = "Class"
+                //event type q = "Quiz"
+                //event type e = "customEvent"
+
+                string selectorString = "";
+                selectorString = item[1];
+
+                char eventSelector = 'a';
+                eventSelector = selectorString[0];
+
+                switch (eventSelector)
+                {
+                case 'c':
+                {
                     string a = "";
-                    a += item[0];
+                    a += item[0]; //name
 
                     string b = "";
-                    b += item[1];
+                    b += item[1]; //type
 
-                    string tem = "";
-                    tem += item[2];
+                    string c = "";
+                    c += item[2]; //recurrence
 
-                    int cTime = stoi(tem);
+                    string d = "";
+                    d += item[3]; //time
+                    int cTime = stoi(d);
 
-                    switch (item[1])
-                    {
-                    case 'c':
-                    {
-                        Event *theClass = new Class(a, b, cTime);
-                        thePlan->addEvent(theClass);
-                        break;
-                    }
-                    
+                    Event *theClass = new Class(a, b, cTime, c);
+                    thePlan->addEvent(theClass);
+                    break;
+                }
 
-                    case 'q':
-                    {
-                        Event *theQuiz = new Quiz(a, b, cTime);
-                        thePlan->addEvent(theQuiz);
-                        break;
-                    }
-                    
-                    /*
+                case 'q':
+                {
+                    string a = "";
+                    a += item[0]; //name
+
+                    string b = "";
+                    b += item[1]; //type
+
+                    string d = "";
+                    d += item[2]; //time
+                    int cTime = stoi(d);
+
+                    Event *theQuiz = new Quiz(a, b, cTime);
+                    thePlan->addEvent(theQuiz);
+                    break;
+                }
+
+                /*
                         case 'u':
                         {
                             string d = "";
@@ -136,12 +159,11 @@ int main()
                         }
                             break;
                         */
-                    default:
-                        cout << "\nEvent Type Error, Try Again.\n";
-                    } //end of switch
+                default:
+                    cout << "\nEvent Type Error, Try Again.\n";
+                } //end of switch
 
-                } //end of for item
-            }     //end of while
+            } //end of while
             //}//end of for chunk
 
         } //end of if inTest length check.
@@ -178,7 +200,6 @@ int main()
 
             newClass = new Class(name, type, time);
             thePlan->addEvent(newClass);
-            
 
             //class schedule: CS100 | class | MWF | 16002101010
             //quiz: CS100 Test | quiz | null | 156001010
@@ -205,7 +226,7 @@ int main()
 
             newQuiz = new Quiz(name, type, time);
             thePlan->addEvent(newQuiz);
-            
+
             break;
         case 3:
             //Create Custom Events
@@ -254,12 +275,16 @@ int main()
 
             break;
         case 7:
+        {
             FileIO::GetInstance()->addData(thePlan->printCalendar()); //
                                                                       //class schedule: CS100 | class | MWF | 16002101010
                                                                       //quiz: CS100 Test | quiz | null | 156001010
                                                                       //CS100 assignment due | custom | null | 11650651651
-            FileIO::GetInstance()->writeToFile(quarterYear+".txt");          //save & exit.
+
+            
+            FileIO::GetInstance()->writeToFile(quarterYear + ".txt"); //save & exit.
             return 0;
+        }
         default:
             cout << "\nInvalid input, please try again.\n";
             break;
@@ -267,7 +292,7 @@ int main()
 
     }
 
-    while (userIn == 1 || userIn == 2 || userIn == 3 || userIn == 4 || userIn == 5 || userIn == 6 || userIn == 7 );
+    while (userIn == 1 || userIn == 2 || userIn == 3 || userIn == 4 || userIn == 5 || userIn == 6 || userIn == 7);
 
     return 0;
 }

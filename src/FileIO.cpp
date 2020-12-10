@@ -21,7 +21,7 @@ FileIO* FileIO::GetInstance()
 void FileIO::writeToFile(std::string writeFileName)
 {
     ofstream  out;
-    out.open(writeFileName.c_str(), ios::out);
+    out.open(writeFileName.c_str(), ios::out); 
     if (out.is_open())
     {
         for (int i = 0;i< allData.size(); i++)
