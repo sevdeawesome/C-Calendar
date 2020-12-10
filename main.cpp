@@ -231,7 +231,7 @@ int main(){
             break;
         case 5:
             //View Upcoming Events
-            cout << thePlan->printUpComingEvents();
+            cout << thePlan->printUpcomingEvents();
             break;
         case 6:
             //View Calendar
