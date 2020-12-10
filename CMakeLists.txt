@@ -12,6 +12,8 @@ ADD_EXECUTABLE(test
 
 ADD_EXECUTABLE(main
 	main.cpp
+    src/FileIO.cpp
+    src/Event.cpp
 )
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
