@@ -110,17 +110,17 @@ int main()
                     {
                         Event *theClass = new Class(a, b, cTime);
                         thePlan->addEvent(theClass);
-                        delete theClass;
+                        break;
                     }
-                    break;
+                    
 
                     case 'q':
                     {
                         Event *theQuiz = new Quiz(a, b, cTime);
                         thePlan->addEvent(theQuiz);
-                        delete theQuiz;
+                        break;
                     }
-                    break;
+                    
                     /*
                         case 'u':
                         {
@@ -237,7 +237,7 @@ int main()
             */
 
             cout << "The custom event has been added." << endl;
-            cout << "implementation here -- Alex";
+            cout << "implementation here Alex";
             break;
         case 4:
             //View Class Schedule
@@ -267,7 +267,7 @@ int main()
 
     }
 
-    while (userIn <= 0 || userIn > 7);
+    while (userIn == 1 || userIn == 2 || userIn == 3 || userIn == 4 || userIn == 5 || userIn == 6 || userIn == 7 );
 
     return 0;
 }
