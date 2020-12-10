@@ -178,7 +178,7 @@ int main()
 
             newClass = new Class(name, type, time);
             thePlan->addEvent(newClass);
-            delete newClass;
+            
 
             //class schedule: CS100 | class | MWF | 16002101010
             //quiz: CS100 Test | quiz | null | 156001010
@@ -205,7 +205,7 @@ int main()
 
             newQuiz = new Quiz(name, type, time);
             thePlan->addEvent(newQuiz);
-            delete newQuiz;
+            
             break;
         case 3:
             //Create Custom Events
