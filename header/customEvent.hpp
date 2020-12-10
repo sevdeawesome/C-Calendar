@@ -2,28 +2,55 @@
 #define __CUSTOMEVENT_H__
 #include <iostream>
 #include <string>
-#include <array>
+#include "timeConverter.hpp"
 using namespace std;
 class customEvent : public Event
 {
-  public:
-        string name;
-        string info;
-        int time;
-        array event* events;
-    
-      //getters
-      int getTime();
-      string getInfo();
-      string getName();
-      string getColor();
-      int getPriority();
+  private:
+	timeConverter t =timeConverter(time,false);
+	int priority;
+	string color;
 
-      //setters
-      void setTime(int time);
-      void setInfo(string info);
-      void setName(string name);
-      void setPriority(int priority);
-      void setColor(string color); 
-}
+  public:
+
+ 	customEvent(string n,string i, int ti):Event(n,i,ti)
+	{
+	   t = timeConverter(time, true);
+	};
+	customEvent(string n, string i, int ti, string rec) : Event(n, i, ti)
+	{
+		t = timeConverter(time, rec);
+
+	};
+ 	string printSchedule() {
+		return t.getSchedule();
+	
+	}; //print class schedule
+	string printUpcomingEvents(){
+		if (checkifToday(time))
+		{
+			return t.getSchedule();
+		}
+		return "";
+	};
+	string printCalendar() {
+		string calendar;
+		calendar += name;
+		calendar += "|ce|";
+		calendar += t.getRec();
+		calendar += "|";
+		calendar += time;
+		calender += "|"
+		calender += color;
+		calender += "|";
+		calender += priority;
+		return calendar;
+	};
+	string printDate() {
+		return	t.getDate();
+	};
+	 string printTime(){
+		return t.getTime();
+	};
+};
 #endif

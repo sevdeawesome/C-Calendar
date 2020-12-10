@@ -53,7 +53,7 @@ bool Event::checkifToday(int timeInput)
 	long int currTime = static_cast<long int>(t);
 
 
-	if((timeInput-currTime) < 86400 || (currTime - timeInput) < 86400)
+	if(abs(currTime - timeInput) <= 86400)
 	{
 		return true; 
 

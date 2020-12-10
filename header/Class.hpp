@@ -1,6 +1,9 @@
 #ifndef CLASS_H
 #define CLASS_H
 
+#include "timeConverter.hpp"
+#include <iostream>
+#include <string>
 
 using namespace std;
 class Class : public Event
@@ -9,42 +12,48 @@ class Class : public Event
 	private:
 		timeConverter t = timeConverter(time, false);
  	 public:
- //       string name;
-   //     string info;
-     //   int time;
-     //   array event* events;
-    	//timeConverter t;
-	
-	Class(string a, string b, int c) : Event(a, b, c) 
+Class(string a, string b, int c) : Event(a, b, c) 
 	{
 		t = timeConverter(time, true);	
 	
 	};
-        void printSchedule()
+	Class(string a, string b, int c, string rec) : Event(a, b, c)
 	{
-	//	timeConverter t = timeConverter(time, true);
-                t.getSchedule();
+		t = timeConverter(time, rec);
 
-	}; //print class schedule
-        void printUpcomingEvents()
+	};
+        string  printSchedule()
+	{
+	 return  t.getSchedule();
+	};
+	string printUpcomingEvents()
 	{
 		if(checkifToday(time))
 		{
-			t.getSchedule();
+			return t.getSchedule();
 		}	
+		return "";
 	};
+string printCalendar()
+	{
+	
+		string calendar;
+		calendar += name;
+		calendar += "|c|";
+		calendar += t.getRec();
+		calendar += "|";
+		calendar += to_string(time);
 
-        void printCalendar()
-	{
-		//needs implementation - what do you want me to do for this?
+
+		return calendar;
 	};
-        void printDate()
-	{
-		t.getDate();
+string printDate()
+	{	
+		return	t.getDate();
 	};
-        void printTime()
+        string printTime()
 	{
-		t.getTime();
+		return t.getTime();
 	};
 };
 

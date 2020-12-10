@@ -7,35 +7,38 @@ class Quiz : public Event
 {
      public:
     	
-	void printSchedule()
-	{
-		timeConverter t = timeConverter(time, false);
-		t.getSchedule();		
-	};
 
-//print class schedule
-        void printUpcomingEvents()
-	{	
-		if(checkifToday(time))
-		{
-			timeConverter t = timeConverter(time, false);
-        	        t.getSchedule();
-		}
-	};
-        void printCalendar()
-	{
-		//no implementation here
-	};
-        void printDate()
+	Quiz(string n, string i, int t) : Event(n, i, t){};
+
+	string printSchedule()
 	{
 		timeConverter t = timeConverter(time, false);
-	         t.getDate();
+		return	t.getSchedule();		
+	};
+        string printUpcomingEvents()
+	{
+		return "";	
+	}
+        string printCalendar()
+	{
+		string calendar;
+		calendar += name;
+		calendar += "|q|"; // q for quiz
+                calendar += "0"; //no recurrence - recurrence term
+                calendar += "|";
+                calendar += to_string(time); //saves as string
+		return calendar;
+	};
+        string printDate()
+	{
+		timeConverter t = timeConverter(time, false);
+	        return t.getDate();
 
 	};
-        void printTime()
+        string printTime()
 	{
 		timeConverter t = timeConverter(time, false);
-                t.getTime();
+                return  t.getTime();
 
 	};
     
