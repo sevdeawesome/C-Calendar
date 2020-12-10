@@ -3,6 +3,7 @@
 //#include "event_tests.h"
 //include other tests here
 #include "../header/Event.hpp"
+#include "FileIOTest.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

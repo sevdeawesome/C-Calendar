@@ -8,6 +8,8 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
     tests/test.cpp
+    src/FileIO.cpp
+    src/Event.cpp
 )
 
 ADD_EXECUTABLE(main
