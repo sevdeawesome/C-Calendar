@@ -64,11 +64,11 @@ Singleton is a design pattern that fits perfectly with our needs of reading and 
  
  
  ## Screenshots
- ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/img/1.png)
-  ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/img/2.png)
-   ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/img/3.png)
-    ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/img/4.png)
-     ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/img/5.png)
+ ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/1.png)
+  ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/2.png)
+   ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/3.png)
+    ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/4.png)
+     ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/5.png)
  
  ## Installation/Usage
  Usage is through CLI, we did not have time to write a script that emails you when an event is coming up, however, implementation would be simple given the code we've built.
