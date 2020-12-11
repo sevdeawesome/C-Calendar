@@ -102,7 +102,7 @@ int main(){
     string type;
     string name;
     string color;
-    int ti;
+    int time;
     int priority;
     //Event * newClass; 
    // Event * newQuiz;
@@ -130,13 +130,14 @@ int main(){
 	cout<<"Enter a name for your custom event." << endl;
 	cin >> name;
 	cout << "Enter a time (in unix) for your custom event." << endl;
-	cin >> ti;
+	cin >> time;
 	Event *custom = new customEvent(name,type,ti);
 	cout << "Enter a color for your custom event."<<endl;
 	cin >> color;
 	custom = new colorDecorator(new customEvent( name, type, ti));
 	cout << "Enter a number of priority for your custom event." << endl;
 	cin >> priority;
+	custom = new priorityDecorator(new colorDecorator(new customEvent(name, type, time),color),priority);
 	thePlan->addEvent(custom);
 	cout << "The custom event has been added." << endl;
 	cout << custom <<endl;
