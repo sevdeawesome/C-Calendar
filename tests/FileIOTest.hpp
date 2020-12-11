@@ -31,14 +31,20 @@ TEST(FileIOTests, GetDataTest)
 }
 TEST(FileIOTests, WriteToFileAndShowDataTest)
 {
+		string middata;
+	string middata_2;
 	FileIO::GetInstance()->readFromFile("readFile.txt");
+	middata = FileIO::GetInstance()->showAllData();
 	FileIO::GetInstance()->addData("6");
 	FileIO::GetInstance()->writeToFile("writeFile.txt");
-	FileIO::GetInstance()->readFromFile("readFile.txt");
-	EXPECT_EQ(FileIO::GetInstance()->showAllData(), "1\n2\n3\n4\n5\n6\n");
-	ASSERT_NE(FileIO::GetInstance()->showAllData(), "21\n2\n3\n4\n5\n6\n");
-	ASSERT_TRUE(FileIO::GetInstance()->showAllData() == "1\n2\n3\n4\n5\n6\n");
-	ASSERT_FALSE(FileIO::GetInstance()->showAllData() == "21\n2\n3\n4\n5\n6\n");
+	FileIO::GetInstance()->readFromFile("writeFile.txt");
+	middata = middata + "6\n";
+	middata_2 = middata + "6\n";
+	assert(middata == FileIO::GetInstance()->showAllData());
+	EXPECT_EQ(FileIO::GetInstance()->showAllData(), middata);
+	ASSERT_NE(FileIO::GetInstance()->showAllData(), middata_2);
+	ASSERT_TRUE(FileIO::GetInstance()->showAllData() == middata);
+	ASSERT_FALSE(FileIO::GetInstance()->showAllData() == middata_2);
 }
 
 
