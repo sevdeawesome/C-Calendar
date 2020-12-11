@@ -59,20 +59,38 @@ Singleton is a design pattern that fits perfectly with our needs of reading and 
 
 ## Class Diagram
 
- ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/project%20(2).png)
+ ![OMT Diagram](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/project%20.png)
  This is our current class diagram. We use the singleton pattern in writing to and from files. We will have a text file when necessary for events like quizzes or custom events that need long descriptions. Our plan class is a composition of events such as quizzes or class that someone has, and here we use the composite pattern where event is the composite. Lastly, we use the decorator pattern to decorate custom events and give them attributes like the color (they will show as a different color in a GUI) or priority (how important or urgent is this event). 
  
  
  ## Screenshots
  ![Screenshot 1](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/1.png)
+ 
+ 
  This screenshot shows the creation of a quiz object.
+ 
+ 
   ![SS2](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/2.png)
+  
+  
   This screenshot shows the creation of a class and inputting its recurrence.
+  
+  
    ![SS3](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/3.png)
+   
+   
    This screenshot shows the output and the loading of data to a file named winter2020
+   
+   
     ![SS4](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/4.png)
+    
+    
      ![SS5](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/5.png)
+     
+     
   This screenshot demonstrates how the FileIO writes events to files, in this case, winter2020.txt
+  
+  
  ## Installation/Usage
  Usage is through CLI, we did not have time to write a script that emails you when an event is coming up, however, implementation would be simple given the code we've built.
  
