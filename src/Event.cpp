@@ -21,7 +21,14 @@ string Event::getName()
 {
 	return name;
 }
-
+string Event::getPriority()
+{
+	return priority;
+}
+string Event::getColor()
+{
+	return color;
+}
 
 //setters
 
@@ -38,7 +45,14 @@ void Event::setName(string n)
 {
 	name = n;
 }
-
+void Event::setPriority(int &p)
+{
+	priority=p;
+}
+void Event::setColor(string& c) 
+{ 
+	color = c; 
+}
 
 
 bool Event::checkifToday(int timeInput)

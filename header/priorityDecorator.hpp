@@ -8,23 +8,28 @@ protected:
 	Event* p_Priority;
 	string convert = to_string(priority);
 public:
-	int getPriorityFunc() { 
-		return priority; 
-	}
-	void setPriorityFunc(int p) { 
-		priority = p; 
-	}
 	
-	priorityDecorator(Event* customEvent) :p_Priority(customEvent) { cout << "created"<<endl; }
-	~priorityDecorator() { cout << "destroyed"<< endl; }
+	priorityDecorator(Event* cEvent,int p) : p_Priority(cEvent) 
+	{
+	p_Priority = cEvent;
+	priority =p; 
+	}
+	~priorityDecorator() { delete p_Priority; }
+	 void setPriority(int &p) {
+              return p_Priority ->setPriority(p);
+        }
+	string getPriority()
+	{
+	      return convert;
+	}
 	string printCalendar() {
-		return p_Priority->printCalendar() + convert + " "; 
+		return p_Priority->printCalendar() + p_Priority->getPriority(); 
 	};
 	string printSchedule() { 
-		return p_Priority->printSchedule() + convert + " ";
+		return p_Priority->printSchedule() + p_Priority->getPriority();
 	};
 	string printUpcomingEvents() { 
-		return p_Priority->printUpcomingEvents() + convert + " ";
+		return p_Priority->printUpcomingEvents() + p_Priority->getPriority();
 	};
 	string printDate() {
 		return p_Priority->printDate();

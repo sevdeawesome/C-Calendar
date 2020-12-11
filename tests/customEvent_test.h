@@ -5,7 +5,7 @@
 #include "../header/priorityDecorator.hpp"
 #include "../header/Class.hpp"
 #include <iostream>
-
+#include <string>
 using namespace std;
 
 
@@ -14,33 +14,42 @@ TEST(EventTests, classTest)
 	Plan * thePlan = new Plan("planA");
 	
 	
-	Event * newClass = new customEvent("Party", "customEvent", 0, "T");
-	Event * newClass2 = new customEvent("Homework", "customEvent", 1607505416, "M");
+	Event * newClass = new customEvent("Party", "customEvent", 0);
+	//Event * newClass2 = new customEvent("Homework", "customEvent", 1607505416, "M");
 	
 	thePlan->addEvent(newClass);
-	thePlan->addEvent(newClass2);
+	//thePlan->addEvent(newClass2);
 	
 	cout<< &newClass<<" event 1"<<endl;
-	cout<< &newClass2<<" event2"<<endl;
-	newClass = new colorDecorator(new customEvent("Party","customEvent",0,"W"),"Red");
+	//cout<< &newClass2<<" event2"<<endl;
+	string color ="red";
+	Event * newClass3 = new colorDecorator(new customEvent("Party","customEvent",0),"red");
 
 	thePlan->addEvent(newClass);
-	cout<< &newClass<<" new event 1"<<endl;
-
-	string a = "01:16:56 PST every M";
+	//cout<< &newClass<<" new event 1"<<endl;
+	string a = "01:16:56 PST M";
 	string b = "16:00:00 PST every T\n01:16:56 PST every M\n";
 	string c = "";
+	string d = "16:00:00 PST red";
+	EXPECT_EQ(newClass3->printSchedule(),d);
+	int priority =1;
+	string convert = to_string(priority);
+	 Event * newClass4 = new priorityDecorator( new colorDecorator(new customEvent("Party","CE",0),color),priority);
 
+	string e= "16:00:00 PST red 1";
+	string f= "Party | CE | 0 | red | 1";
+	EXPECT_EQ(newClass4->printSchedule(),e);
+	EXPECT_EQ(newClass4->printUpcomingEvents(),f);
 
-	EXPECT_EQ(newClass2->printSchedule(), a);	
-	cout<<newClass2->printSchedule()<<"   classchedule"<<endl;
-	EXPECT_EQ(thePlan->printSchedule(), b);
-	cout<<thePlan->printSchedule()<<"   planschedule"<<endl;
-	EXPECT_EQ(newClass->checkifToday(), false);
-	cout<<newClass->checkifToday()<<"   checking"<<endl;
-	EXPECT_EQ(thePlan->printUpcomingEvents(), a);
-	cout<<thePlan->printUpcomingEvents()<<"   upcoming events"<<endl;
-	
+	//newClass = new colorDecorator(new
+
+	//EXPECT_EQ(newClass2->printSchedule(), a);	
+	//EXPECT_EQ(thePlan->printSchedule(), b);
+	//EXPECT_EQ(newClass->checkifToday(), false);
+	//EXPECT_EQ(thePlan->printUpcomingEvents(), a);
+	delete newClass4;
+	delete newClass3;
+	delete newClass;
 
 }
 

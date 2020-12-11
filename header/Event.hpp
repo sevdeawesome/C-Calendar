@@ -13,11 +13,18 @@ class Event {
         protected:
         string name;
         string info;
-        int time;
+       
+	int time;
+	
 
 	public:
+	string color;
+	string priority;
+	//string convert= to_string(priority);
 	//constructor
 	Event(){};
+	Event(Event* cEvent,string c){color = c;};
+	Event(Event* cEvent,int p){priority =p;};
 	Event(string n, string i, int t)
 	{
 		name = n; 
@@ -30,13 +37,15 @@ class Event {
         int getTime();
 	string getInfo();
 	string getName();
-	
+	string getPriority();
+	string getColor();
 	   
 	//setters
 	void setTime(int t);
 	void setInfo(string i);
 	void setName(string n);
-
+	void setColor(string&);
+	void setPriority(int&);
 
 	//members (virtual)
         virtual string printSchedule() = 0; //print class schedule
