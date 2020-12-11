@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
-//#include "time_tests.h"
-//#include "event_tests.h"
+#include "time_tests.h"
+#include "event_tests.h"
 //include other tests here
 #include "../header/Event.hpp"
 #include "FileIOTest.hpp"
