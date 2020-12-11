@@ -30,8 +30,9 @@ class Class : public Event
         string  printSchedule()
 	{
 	//	timeConverter t = timeConverter(time, true);
-               return  t.getSchedule();
-
+         	string output = name + ": " + t.getSchedule();
+		//      return  t.getSchedule();
+		return output;
 	}; //print class schedule
         string printUpcomingEvents()
 	{

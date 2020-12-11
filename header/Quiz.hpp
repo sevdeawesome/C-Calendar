@@ -11,7 +11,9 @@ class Quiz : public Event
 	string printSchedule()
 	{
 		timeConverter t = timeConverter(time, false);
-		return	t.getSchedule();		
+		
+		string output = name + ": " + t.getSchedule();
+		return output;		
 	};
 
         string printUpcomingEvents()

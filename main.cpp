@@ -200,7 +200,7 @@ int main()
 
             newClass = new Class(name, type, time);
             thePlan->addEvent(newClass);
-
+		FileIO::GetInstance()->addData(newClass->printCalendar());
             //class schedule: CS100 | class | MWF | 16002101010
             //quiz: CS100 Test | quiz | null | 156001010
             //CS100 assignment due | custom | null | 11650651651
@@ -226,7 +226,7 @@ int main()
 
             newQuiz = new Quiz(name, type, time);
             thePlan->addEvent(newQuiz);
-
+		FileIO::GetInstance()->addData(newQuiz->printCalendar());
             break;
         case 3:
             //Create Custom Events
@@ -276,7 +276,7 @@ int main()
             break;
         case 7:
         {
-            FileIO::GetInstance()->addData(thePlan->printCalendar()); //
+           // FileIO::GetInstance()->addData(thePlan->printCalendar()); //
                                                                       //class schedule: CS100 | class | MWF | 16002101010
                                                                       //quiz: CS100 Test | quiz | null | 156001010
                                                                       //CS100 assignment due | custom | null | 11650651651
