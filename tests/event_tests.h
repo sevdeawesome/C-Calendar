@@ -124,7 +124,7 @@ TEST(EventTests, classTest)
 	thePlan->addEvent(newClass2);
 	
 
-	string a = "01:16:56 PST every MWF";
+	string a = "Phys40C: 01:16:56 PST every MWF";
 	string b = "CS100: 16:00:00 PST every T/TR\nPhys40C: 01:16:56 PST every MWF\n";
 	string c = "";
 
