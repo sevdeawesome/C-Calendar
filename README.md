@@ -100,3 +100,4 @@ Singleton is a design pattern that fits perfectly with our needs of reading and 
  ## Testing
  We used Googletest and were each responsible for testing our own classes and methods. 
  
+ ![Screenshot of tests](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/tests.png)
