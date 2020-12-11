@@ -93,6 +93,9 @@ Singleton is a design pattern that fits perfectly with our needs of reading and 
   
  ## Installation/Usage
  Usage is through CLI, we did not have time to write a script that emails you when an event is coming up, however, implementation would be simple given the code we've built.
+ We planned on making a web GUI with HTML and CSS to show the calendar and write PHP on the website to send an email at the beginning of each week running printSchedule() on each event that takes place that week.
+ We have not implemented that yet because we didn't have enough time and ran into segmentation faults and various other issues with our code. 
+ 
  
  ## Testing
  We used Googletest and were each responsible for testing our own classes and methods. 
