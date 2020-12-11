@@ -125,7 +125,7 @@ TEST(EventTests, classTest)
 	
 
 	string a = "01:16:56 PST every MWF";
-	string b = "16:00:00 PST every T/TR\n01:16:56 PST every MWF\n";
+	string b = "CS100: 16:00:00 PST every T/TR\nPhys40C: 01:16:56 PST every MWF\n";
 	string c = "";
 
 
