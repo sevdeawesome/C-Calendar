@@ -82,10 +82,10 @@ Singleton is a design pattern that fits perfectly with our needs of reading and 
    This screenshot shows the output and the loading of data to a file named winter2020
    
    
-    ![SS4](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/4.png)
+   ![SS4](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/4.png)
     
     
-     ![SS5](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/5.png)
+   ![SS5](https://github.com/cs100/final-project-cche003-anguy600-sfiel003/blob/master/5.png)
      
      
   This screenshot demonstrates how the FileIO writes events to files, in this case, winter2020.txt
